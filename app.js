@@ -113,7 +113,8 @@
     }
   }
 
-  labelInput.addEventListener("input", draw);
+  // A new name means a new person, so it gets a fresh secret rather than a relabelled one.
+  labelInput.addEventListener("input", regenerate);
   $("regen").addEventListener("click", regenerate);
   $("copy").addEventListener("click", function () {
     if (!currentSecret) return;
