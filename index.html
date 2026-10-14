@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="A code word that changes every 30 seconds. Prove it's really you on a phone call, even if someone has cloned your voice.">
+<title>Vouch For Me Now</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>Vouch For Me Now</h1>
+    <p class="tagline">A code word that changes every 30 seconds.</p>
+  </header>
+
+  <nav><a href="how-to-use.html">How to use it</a><a href="https://github.com/ilivewithian/vouchformenow">Source code</a></nav>
+
+  <p>Scammers can now copy a voice from a few seconds of audio. This page gives two people a shared secret so that, on a call, either of you can prove you're the real one. The secret never leaves your browser.</p>
+
+  <div id="unsupported" class="warn hidden">Your browser doesn't support the cryptography this page needs. Try a current version of Chrome, Firefox, Safari or Edge.</div>
+
+  <section id="generator" class="panel">
+    <label for="label">Who is this pair? (shown in your authenticator app)</label>
+    <input type="text" id="label" placeholder="e.g. Rob & Jac" maxlength="40" autocomplete="off" spellcheck="false">
+
+    <div class="qr-wrap" id="qr" aria-label="QR code containing the shared secret"></div>
+
+    <div class="secret hidden" id="secret"></div>
+
+    <div class="row">
+      <button id="reveal">Show secret as text</button>
+      <button id="copy">Copy secret</button>
+      <button id="regen" class="primary">Generate a new one</button>
+    </div>
+
+    <h2>Right now the code is</h2>
+    <div class="code-row">
+      <span class="code" id="code">— —</span>
+      <span class="countdown" id="countdown"></span>
+    </div>
+    <p class="small">After you both scan, check your apps show this same number. Then close this tab.</p>
+  </section>
+
+  <section>
+    <h2>Set it up in a minute</h2>
+    <ol class="steps">
+      <li><strong>Be together, or on a call you already trust.</strong> Don't do this over the channel you're trying to protect.</li>
+      <li><strong>Both people scan the same QR code</strong> with any authenticator app — Google Authenticator, Authy, Microsoft Authenticator, 1Password, Bitwarden, Apple Passwords.</li>
+      <li><strong>Check your apps match</strong> the number shown above.</li>
+      <li><strong>Close this page.</strong> The secret only exists on your two phones now. Generate a fresh one if you want to set up another pair.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Using it on a call</h2>
+    <p>"Something feels off. Read me the code." Open the app, read the six digits. If they match what's on your screen, it's them. If they stall, make excuses, or get it wrong — hang up and call back on a number you know.</p>
+    <p><a href="how-to-use.html">More detail, and what this does and doesn't protect against →</a></p>
+  </section>
+
+  <div class="warn">
+    <strong>One secret per pair.</strong> If you share one secret with your whole family, anyone in the family can pretend to be anyone else. Make a separate one for each pair of people.
+  </div>
+
+  <footer>
+    <p>No accounts, no cookies, no analytics, no server. Everything happens in your browser; you can save this page and run it offline. Standard TOTP (RFC 6238), so it works with any authenticator app.</p>
+    <p>QR encoding by <a href="https://github.com/kazuhikoarase/qrcode-generator">qrcode-generator</a> (MIT). "QR Code" is a registered trademark of DENSO WAVE.</p>
+  </footer>
+</main>
+<script src="vendor/qrcode.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
