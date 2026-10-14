@@ -92,9 +92,13 @@
     importKey(currentSecret).then(function (k) { totpKey = k; tick(); });
   }
 
+  var addLink = $("addlink");
+
   function draw() {
     if (!currentSecret) return;
-    qrWrap.innerHTML = renderQr(otpauthUri(currentSecret, labelInput.value));
+    var uri = otpauthUri(currentSecret, labelInput.value);
+    qrWrap.innerHTML = renderQr(uri);
+    addLink.href = uri;
     secretEl.textContent = groupSecret(currentSecret);
   }
 
