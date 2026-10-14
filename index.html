@@ -18,13 +18,13 @@
 
   <nav><a href="how-to-use.html">How to use it</a><a href="https://github.com/ilivewithian/vouchformenow">Source code</a></nav>
 
-  <p>Scammers can now copy a voice from a few seconds of audio. This page gives two people a shared secret so that, on a call, either of you can prove you're the real one. The secret never leaves your browser.</p>
+  <p>Scammers can now copy a voice from a few seconds of audio. This page gives you a personal code that the people you trust can check, so on a call you can prove you're really you — and they can prove they're really them. The secret never leaves your browser.</p>
 
   <div id="unsupported" class="warn hidden">Your browser doesn't support the cryptography this page needs. Try a current version of Chrome, Firefox, Safari or Edge.</div>
 
   <section id="generator" class="panel">
-    <label for="label">Who is this pair? (shown in your authenticator app)</label>
-    <input type="text" id="label" placeholder="e.g. Rob & Jac" maxlength="40" autocomplete="off" spellcheck="false">
+    <label for="label">Whose code is this? (shown in your authenticator app)</label>
+    <input type="text" id="label" placeholder="e.g. Rob" maxlength="40" autocomplete="off" spellcheck="false">
 
     <div class="qr-wrap" id="qr" aria-label="QR code containing the shared secret"></div>
 
@@ -41,27 +41,28 @@
       <span class="code" id="code">— —</span>
       <span class="countdown" id="countdown"></span>
     </div>
-    <p class="small">After you both scan, check your apps show this same number. Then close this tab.</p>
+    <p class="small">After everyone has scanned, check all the apps show this same number. Then close this tab.</p>
   </section>
 
   <section>
     <h2>Set it up in a minute</h2>
     <ol class="steps">
       <li><strong>Be together, or on a call you already trust.</strong> Don't do this over the channel you're trying to protect.</li>
-      <li><strong>Both people scan the same QR code</strong> with any authenticator app — Google Authenticator, Authy, Microsoft Authenticator, 1Password, Bitwarden, Apple Passwords.</li>
-      <li><strong>Check your apps match</strong> the number shown above.</li>
-      <li><strong>Close this page.</strong> The secret only exists on your two phones now. Generate a fresh one if you want to set up another pair.</li>
+      <li><strong>Type your name and scan your QR code</strong> into your authenticator app — Google Authenticator, Authy, Microsoft Authenticator, 1Password, Bitwarden, Apple Passwords all work.</li>
+      <li><strong>The people who need to check it's you scan the same QR</strong> into their apps. Now they can see "Rob" ticking over on their phone.</li>
+      <li><strong>Swap roles.</strong> Generate a new code with their name on it so you can check it's them. Verification should go both ways.</li>
+      <li><strong>Close this page.</strong> The secret only exists on your phones now.</li>
     </ol>
   </section>
 
   <section>
     <h2>Using it on a call</h2>
-    <p>"Something feels off. Read me the code." Open the app, read the six digits. If they match what's on your screen, it's them. If they stall, make excuses, or get it wrong — hang up and call back on a number you know.</p>
+    <p>"Something feels off. Read me your code." They open the app and read their own six digits; you look at the entry with their name in your app. Match? It's them. If they stall, make excuses, or get it wrong — hang up and call back on a number you know. And if they're not sure it's you, read them yours.</p>
     <p><a href="how-to-use.html">More detail, and what this does and doesn't protect against →</a></p>
   </section>
 
   <div class="warn">
-    <strong>One secret per pair.</strong> If you share one secret with your whole family, anyone in the family can pretend to be anyone else. Make a separate one for each pair of people.
+    <strong>Your code is your identity — share it only with people who need to check it's you.</strong> Anyone holding your code could pretend to be you to the others who hold it, so keep the circle small, and never use one code for a whole group.
   </div>
 
   <footer>

@@ -44,7 +44,7 @@
 
   function otpauthUri(secret, label) {
     var issuer = "VouchForMeNow";
-    var account = (label || "Pair").trim() || "Pair";
+    var account = (label || "").trim() || "Me";
     return "otpauth://totp/" + encodeURIComponent(issuer) + ":" + encodeURIComponent(account) +
       "?secret=" + secret + "&issuer=" + encodeURIComponent(issuer) +
       "&algorithm=SHA1&digits=6&period=30";

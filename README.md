@@ -2,16 +2,17 @@
 
 **A code word that changes every 30 seconds.**
 
-[vouchformenow.com](https://vouchformenow.com) gives two people a shared secret so that, on a phone call, either can prove they're the real one — even if a scammer has cloned their voice.
+[vouchformenow.com](https://vouchformenow.com) gives each person a personal code that the people they trust can check, so on a phone call you can prove you're really you — and they can prove they're really them — even if a scammer has cloned a voice.
 
-It's standard TOTP (the same thing behind two-factor login codes), used between two humans instead of between a human and a website. Both people scan one QR code into any authenticator app; from then on their phones show the same six-digit code at the same time. "Read me the code" becomes a family habit that a voice clone can't fake.
+It's standard TOTP (the same thing behind two-factor login codes), used between humans instead of between a human and a website. Rob generates "Rob", scans it into his authenticator app, and the people who need to verify Rob scan the same QR. Jac does the same for "Jac". From then on, "read me your code" works in both directions and a voice clone can't fake it.
 
 ## How it works
 
 1. The page generates a random 160-bit secret with `crypto.getRandomValues`.
 2. It encodes the secret as an `otpauth://totp/…` URI and renders it as a QR code.
-3. Both people scan the same QR with their authenticator app (Google Authenticator, Authy, Microsoft Authenticator, 1Password, Bitwarden, Apple Passwords, Aegis, …).
-4. The page shows the current code (HMAC-SHA1 via WebCrypto) so both apps can be checked, then everyone closes the tab.
+3. The named person scans it into their authenticator app (Google Authenticator, Authy, Microsoft Authenticator, 1Password, Bitwarden, Apple Passwords, Aegis, …), and so does everyone who needs to verify them.
+4. The page shows the current code (HMAC-SHA1 via WebCrypto) so all the apps can be checked, then everyone closes the tab.
+5. Repeat for each person, so verification runs both ways.
 
 Nothing is stored and nothing is transmitted. There is no server.
 
@@ -25,10 +26,10 @@ Nothing is stored and nothing is transmitted. There is no server.
 
 **Does not protect against**
 
-- A stolen, unlocked phone — whoever holds the device holds the codes
+- A stolen, unlocked phone — whoever holds the device holds every code on it
 - A live relay: an attacker on the line with the real person at the same moment can pass a code on within its 30-second window
 - Social pressure to skip the check — the point is to make pausing normal
-- Identifying *which* person in a pair is speaking; both hold the same secret, so use one secret per pair, never one per group
+- Misuse by the trusted circle: anyone holding "Rob" can read Rob's code to another holder, so each person's code should go only to the people who need to verify them
 
 ## Privacy and trust
 

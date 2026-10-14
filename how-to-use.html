@@ -21,25 +21,28 @@
   <p>"Hi Mum, I've lost my phone, this is my new number, can you send me £300?" used to be a text. Now it can be a phone call in your child's actual voice, cloned from a TikTok clip. Old-fashioned family code words help, but a fixed word can be overheard, guessed, or coaxed out of someone once and reused forever.</p>
 
   <h2>The idea</h2>
-  <p>Authenticator apps already solve "prove you hold a secret without saying the secret". Two phones holding the same secret show the same six-digit code at the same time, and the code changes every thirty seconds. So the person on the line can read you their code, and you check it against yours. A scammer with a cloned voice can't produce it.</p>
+  <p>Authenticator apps already solve "prove you hold a secret without saying the secret". Phones holding the same secret show the same six-digit code at the same time, and the code changes every thirty seconds. So everyone gets a personal code: Rob's code lives on Rob's phone and on the phones of the people who need to check it's Rob. When Rob rings, he reads his code and they look at the "Rob" entry in their app. A scammer with a cloned voice can't produce it.</p>
+  <p>And it goes both ways. Jac has her own code, held by Rob and anyone else who needs to check it's her. So Rob can check he's talking to Jac, and Jac can check she's talking to Rob.</p>
 
   <h2>Setting it up</h2>
   <ol class="steps">
     <li><strong>Do it in person, or on a call you already trust.</strong> You're about to share a secret, so don't do it over a channel you're worried about.</li>
-    <li><strong>Open the generator and type a label</strong> such as "Mum & Rob". That's just the name your authenticator app shows.</li>
-    <li><strong>Both of you scan the same QR code</strong> with your authenticator app. Any app that does "two-factor codes" works: Google Authenticator, Microsoft Authenticator, Authy, 1Password, Bitwarden, Apple Passwords, Aegis, Ente Auth.</li>
-    <li><strong>Check the numbers match</strong> — both apps and the page should show the same code.</li>
-    <li><strong>Close the page.</strong> If you ever need to set up the same pair again, generate a fresh secret and re-scan; don't try to keep the old one.</li>
-    <li><strong>Repeat for each pair.</strong> Mum & Rob, Mum & Sarah, Rob & Sarah. One secret per pair, not one for the whole family.</li>
+    <li><strong>Open the generator and type your name</strong> — "Rob". That's the label the authenticator app shows.</li>
+    <li><strong>Scan your QR code</strong> into your own authenticator app. Any app that does "two-factor codes" works: Google Authenticator, Microsoft Authenticator, Authy, 1Password, Bitwarden, Apple Passwords, Aegis, Ente Auth.</li>
+    <li><strong>Let the people who need to check it's you scan the same QR</strong> into their apps. Mum, Jac, your sister — whoever you might ring asking for help.</li>
+    <li><strong>Check the numbers match</strong> across all the apps and the page.</li>
+    <li><strong>Now do theirs.</strong> Generate a new code with Jac's name on it; Jac scans it, and so do you. Repeat for each person.</li>
+    <li><strong>Close the page.</strong> If a phone is ever lost, generate a fresh code for that person and have everyone re-scan; don't try to keep the old one.</li>
   </ol>
+  <p class="small">Why one per person rather than one per pair? Because with a pair code nobody can tell which end is speaking, and it doesn't scale — five family members would need ten of them. With a personal code, "Rob's code" means Rob, and anyone who needs to check Rob just holds that one entry.</p>
 
   <h2>On a call</h2>
-  <p>Agree in advance that either of you can ask at any time, and that asking is never rude. Then, when something feels off:</p>
+  <p>Agree in advance that anyone can ask at any time, and that asking is never rude. Then, when something feels off:</p>
   <div class="panel">
-    <p><em>"Before we go on — read me the code."</em></p>
-    <p>They open their app and read six digits. You open yours. Same number? Carry on. Different, or they can't do it, or they say the app isn't working, or they get upset that you asked? <strong>Hang up and call them back on the number you already have.</strong></p>
+    <p><em>"Before we go on — read me your code."</em></p>
+    <p>They open their app and read the six digits under their own name. You open yours and find the entry with their name. Same number? Carry on. Different, or they can't do it, or they say the app isn't working, or they get upset that you asked? <strong>Hang up and call them back on the number you already have.</strong></p>
   </div>
-  <p>It also works the other way round: if you ring a relative and they're not sure it's you, read them your code.</p>
+  <p>And if they're not sure it's you, read them yours. Both directions, whenever either of you wants.</p>
 
   <h2>What it protects against</h2>
   <ul>
@@ -50,10 +53,10 @@
 
   <h2>What it doesn't protect against</h2>
   <ul>
-    <li><strong>A stolen or unlocked phone.</strong> Whoever holds the phone holds the codes. Keep a lock on it, and if a phone is lost, generate new secrets for every pair it was in.</li>
+    <li><strong>A stolen or unlocked phone.</strong> Whoever holds the phone holds every code on it — their own and everyone else's. Keep a lock on it, and if a phone is lost, generate fresh codes for every person whose entry was on it.</li>
     <li><strong>Someone relaying codes live.</strong> If an attacker is on a call with the real person at the same moment and asks them for their code, they can pass it on within the thirty seconds. Rare, but possible. If a code arrives suspiciously late, ask for the next one.</li>
     <li><strong>Pressure.</strong> The whole point is to give you a reason to pause. If someone is pushing you to skip the check, that's the signal.</li>
-    <li><strong>Telling you who it is.</strong> Both people in a pair share the same secret, so a code proves "someone in this pair", not which one. That's fine when there are two of you; it's why you shouldn't use one secret for a group.</li>
+    <li><strong>The people you trusted with your code.</strong> Anyone holding "Rob" could read Rob's code to someone else who holds it. Share your code only with people who need to check it's you, and keep that circle small.</li>
   </ul>
 
   <h2>How it works, for the curious</h2>
